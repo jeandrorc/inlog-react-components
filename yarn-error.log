@@ -1,0 +1,71 @@
+Arguments: 
+  /Users/jeandrocouto/.nvm/versions/node/v18.12.1/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js
+
+PATH: 
+  /Users/jeandrocouto/.nvm/versions/node/v18.12.1/bin:/usr/local/opt/mongodb-community@4.4/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/Library/Python/3.7/bin:/Users/jeandrocouto/.composer/vendor/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.12.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@mui%2fmaterial: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:141550:19)
+      at listOnTimeout (node:internal/timers:564:17)
+      at process.processTimers (node:internal/timers:507:7)
+
+npm manifest: 
+  {
+    "name": "react-components",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "tsc",
+      "storybook": "storybook dev -p 6006",
+      "build-storybook": "storybook build"
+    },
+    "keywords": [],
+    "author": "Jeandro Couto <jeandro.couto@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+      "@babel/preset-env": "^7.21.5",
+      "@babel/preset-react": "^7.18.6",
+      "@babel/preset-typescript": "^7.21.5",
+      "@storybook/addon-essentials": "^7.0.17",
+      "@storybook/addon-interactions": "^7.0.17",
+      "@storybook/addon-links": "^7.0.17",
+      "@storybook/blocks": "^7.0.17",
+      "@storybook/react": "^7.0.17",
+      "@storybook/react-webpack5": "^7.0.17",
+      "@storybook/testing-library": "^0.0.14-next.2",
+      "@types/react": "^18.2.7",
+      "@types/react-dom": "^18.2.4",
+      "prop-types": "^15.8.1",
+      "storybook": "^7.0.6",
+      "typescript": "^5.0.4"
+    },
+    "dependencies": {
+      "@mui/material": ">=5.0.0",
+      "@mui/x-data-grid": "^6.9.2",
+      "react": ">=17.0.0",
+      "react-dom": ">=17.0.0"
+    },
+    "peerDependencies": {
+      "@mui/material": ">=5.0.0",
+      "react": ">=17.0.0",
+      "react-dom": ">=17.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

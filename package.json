@@ -1,0 +1,46 @@
+{
+  "name": "react-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "Jeandro Couto <jeandro.couto@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.5",
+    "@storybook/addon-essentials": "^7.0.17",
+    "@storybook/addon-interactions": "^7.0.17",
+    "@storybook/addon-links": "^7.0.17",
+    "@storybook/blocks": "^7.0.17",
+    "@storybook/react": "^7.0.17",
+    "@storybook/react-webpack5": "^7.0.17",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.0.6",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.1",
+    "@mui/material": "^5.14.0",
+    "@mui/x-data-grid": "^6.9.2",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "peerDependencies": {
+    "@mui/material": ">=5.0.0",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  }
+}
