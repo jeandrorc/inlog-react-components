@@ -1,20 +1,31 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Contributing
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Agradecemos sua iniciativa de contribuir para este projeto! Aqui estão algumas diretrizes para ajudar a tornar seu processo de contribuição mais fácil e eficaz.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Relatórios de bugs e solicitações de recursos
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+Por favor, use o sistema de issues do GitHub para relatar bugs ou solicitar recursos. Ao relatar um bug, tente incluir o máximo de detalhes possível, incluindo os passos para reproduzir o bug, a versão do projeto que você está usando, o ambiente de desenvolvimento que você está usando, etc.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Solicitações pull
+
+Aceitamos solicitações pull (PRs) e agradecemos por criar bem feitas!
+
+Por favor:
+
+1. Certifique-se de que o PR é para a branch correta. Deve ser para `main` ou para a branch de desenvolvimento, se houver uma.
+2. Certifique-se de que sua contribuição segue nossas diretrizes de estilo de código. Isso geralmente significa seguir as convenções já estabelecidas no código.
+3. Verifique se a sua contribuição passa em todos os nossos testes automatizados.
+4. Se estiver adicionando uma nova funcionalidade, por favor inclua testes que a cubram.
+
+### Iniciando
+
+1. Faça um fork do repositório.
+2. Clone seu fork (`git clone https://github.com/<seu-username>/<projeto>.git`).
+3. Crie uma nova branch (`git checkout -b <nome-da-branch>`).
+4. Faça suas alterações.
+5. Teste suas alterações.
+6. Faça o commit de suas alterações (`git commit -am 'Adicione algum recurso'`).
+7. Faça o push para a branch (`git push origin <nome-da-branch>`).
+8. Crie uma nova solicitação pull.
+
+Agradecemos sua contribuição e estamos ansiosos para revisar seu PR!
