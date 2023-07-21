@@ -15,6 +15,7 @@ export const BaseHeader = styled(AppBar)`
   border-bottom: 1px solid ${colors.borderColor};
   .MuiToolbar-root {
     flex: 1;
+    padding-right: 0;
   }
 `;
 

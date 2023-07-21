@@ -33,15 +33,9 @@ const Header_styled_1 = require("./Header.styled");
 const InputSearch_1 = __importDefault(require("../InputSearch/InputSearch"));
 const MenuButton_1 = __importDefault(require("./MenuButton/MenuButton"));
 const DrawerMenu_1 = __importDefault(require("../DrawerMenu/DrawerMenu"));
-const Header = ({ logoPros, onMenuClick, showSearch, inputSearchProps, SearchComponent, avatarMenuOptions, RightActionsComponent, drawerMenuProps, hideMenuButton = false, pageTitle, }) => {
-    const [anchorEl, setAnchorEl] = (0, react_1.useState)(null);
+const MenuAction_1 = __importDefault(require("./MenuAction/MenuAction"));
+const Header = ({ logoPros, onMenuClick, showSearch, inputSearchProps, SearchComponent, menuOptions, RightActionsComponent, drawerMenuProps, hideMenuButton = false, pageTitle, }) => {
     const [drawerOpen, setDrawerOpen] = (0, react_1.useState)(false); // New state for Drawer open/close
-    const handleAvatarMenuClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleAvatarMenuClose = () => {
-        setAnchorEl(null);
-    };
     // New handler for Drawer open/close
     const handleDrawerOpenClose = () => {
         setDrawerOpen(!drawerOpen);
@@ -53,10 +47,8 @@ const Header = ({ logoPros, onMenuClick, showSearch, inputSearchProps, SearchCom
                 react_1.default.createElement(Logo_1.default, Object.assign({}, logoPros)),
                 Header_styled_1.PageTitle && react_1.default.createElement(Header_styled_1.PageTitle, { variant: "h1" }, pageTitle)),
             react_1.default.createElement(Header_styled_1.CenterArea, null, showSearch && !SearchComponent && (react_1.default.createElement(InputSearch_1.default, Object.assign({}, inputSearchProps)))),
-            react_1.default.createElement(Header_styled_1.RightArea, null,
-                react_1.default.createElement(material_1.IconButton, { edge: "end", color: "inherit", onClick: handleAvatarMenuClick },
-                    react_1.default.createElement(material_1.Avatar, null)),
-                react_1.default.createElement(material_1.Menu, { anchorEl: anchorEl, keepMounted: true, open: Boolean(anchorEl), onClose: handleAvatarMenuClose }, avatarMenuOptions === null || avatarMenuOptions === void 0 ? void 0 : avatarMenuOptions.map((option, index) => (react_1.default.createElement(material_1.MenuItem, { key: index, onClick: handleAvatarMenuClose }, option)))),
+            react_1.default.createElement(Header_styled_1.RightArea, null, menuOptions === null || menuOptions === void 0 ? void 0 :
+                menuOptions.map(option => react_1.default.createElement(MenuAction_1.default, Object.assign({}, option))),
                 RightActionsComponent && react_1.default.createElement(react_1.default.Fragment, null, RightActionsComponent))),
         react_1.default.createElement(DrawerMenu_1.default, Object.assign({}, drawerMenuProps, { open: drawerOpen, onClose: handleDrawerOpenClose }))));
 };
