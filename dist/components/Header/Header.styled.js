@@ -19,6 +19,7 @@ exports.BaseHeader = (0, styled_1.default)(material_1.AppBar) `
   border-bottom: 1px solid ${colors_1.default.borderColor};
   .MuiToolbar-root {
     flex: 1;
+    padding-right: 0;
   }
 `;
 exports.RightMenuButtonWrapper = (0, styled_1.default)(system_1.Box) `

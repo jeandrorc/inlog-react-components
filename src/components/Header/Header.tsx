@@ -1,17 +1,11 @@
 import React, { ReactNode, MouseEvent, useState } from "react";
 import {
-  AppBar,
   Toolbar,
   IconButton,
   Menu,
   MenuItem,
-  InputBase,
   Avatar,
-  Drawer,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Logo, { LogoProps } from "../Logo/Logo";
 import {
   BaseHeader,
@@ -21,10 +15,11 @@ import {
   RightArea,
   RightMenuButtonWrapper,
 } from "./Header.styled";
-import colors from "../../constants/colors";
+
 import InputSearch, { InputSearchProps } from "../InputSearch/InputSearch";
 import MenuButton from "./MenuButton/MenuButton";
 import DrawerMenu, { DrawerMenuProps } from "../DrawerMenu/DrawerMenu";
+import MenuAction, { MenuActionProps } from "./MenuAction/MenuAction";
 
 export interface HeaderProps {
   logoPros: LogoProps;
@@ -32,7 +27,7 @@ export interface HeaderProps {
   showSearch?: boolean;
   inputSearchProps?: InputSearchProps;
   SearchComponent?: ReactNode;
-  avatarMenuOptions?: string[];
+  menuOptions?: MenuActionProps[];
   RightActionsComponent?: ReactNode;
   drawerMenuProps?: Partial<DrawerMenuProps>;
   hideMenuButton?: boolean;
@@ -45,22 +40,13 @@ const Header: React.FC<HeaderProps> = ({
   showSearch,
   inputSearchProps,
   SearchComponent,
-  avatarMenuOptions,
+  menuOptions,
   RightActionsComponent,
   drawerMenuProps,
   hideMenuButton = false,
   pageTitle,
 }) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [drawerOpen, setDrawerOpen] = useState(false); // New state for Drawer open/close
-
-  const handleAvatarMenuClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleAvatarMenuClose = () => {
-    setAnchorEl(null);
-  };
 
   // New handler for Drawer open/close
   const handleDrawerOpenClose = () => {
@@ -85,25 +71,7 @@ const Header: React.FC<HeaderProps> = ({
           )}
         </CenterArea>
         <RightArea>
-          <IconButton
-            edge="end"
-            color="inherit"
-            onClick={handleAvatarMenuClick}
-          >
-            <Avatar />
-          </IconButton>
-          <Menu
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleAvatarMenuClose}
-          >
-            {avatarMenuOptions?.map((option, index) => (
-              <MenuItem key={index} onClick={handleAvatarMenuClose}>
-                {option}
-              </MenuItem>
-            ))}
-          </Menu>
+          { menuOptions?.map(option => <MenuAction {...option}/>)}
           {RightActionsComponent && <>{RightActionsComponent}</>}
         </RightArea>
       </Toolbar>
