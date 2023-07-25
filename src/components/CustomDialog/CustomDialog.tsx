@@ -7,12 +7,12 @@ import {
 } from "@mui/material";
 import React from "react";
 
-interface DialogButton {
+export interface DialogButton {
   label: string;
   action: () => void;
 }
 
-interface CustomDialogProps {
+export interface CustomDialogProps {
   open: boolean;
   title?: string;
   content?: React.ReactNode;

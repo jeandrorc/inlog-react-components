@@ -1,6 +1,4 @@
 import {
-  Avatar,
-  Button,
   IconButton,
   Menu,
   MenuItem,
@@ -10,7 +8,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { MenuItemRoot } from "./MenuAction.styled";
-import CustomDialog from "../../Dialog/Dialog";
+import CustomDialog from "../../CustomDialog/CustomDialog";
 
 export type MenuOption = {
   label: string;

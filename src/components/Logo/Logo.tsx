@@ -1,6 +1,8 @@
 import React from "react";
 import { FooterLogo, HeaderLogo } from "./Logo.styled";
-const image = require("../../assets/images/logo.png");
+import { LOGO_INLOG } from "./constants";
+
+const image = LOGO_INLOG;
 
 /**
  * Tipos de propriedades para o componente Logo.

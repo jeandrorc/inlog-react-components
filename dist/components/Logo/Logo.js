@@ -5,7 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
 const Logo_styled_1 = require("./Logo.styled");
-const image = require("../../assets/images/logo.png");
+const constants_1 = require("./constants");
+const image = constants_1.LOGO_INLOG;
 /**
  * Componente que renderiza a imagem do logo.
  *
