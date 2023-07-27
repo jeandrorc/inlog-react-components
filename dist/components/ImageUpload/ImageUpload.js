@@ -33,9 +33,19 @@ require("react-image-lightbox/style.css");
 const ImageUpload_styled_1 = require("./ImageUpload.styled");
 const material_1 = require("@mui/material");
 const icons_material_1 = require("@mui/icons-material");
-const ImageUpload = ({ multiple = false, thumbSize, addButtonText = "Adicionar", maxSizeInMB, maxFiles, onFileChange, reverse }) => {
+const getFileInformation = (file) => {
+    return {
+        name: file.name,
+        size: file.size,
+        type: file.type,
+        lastModified: file.lastModified,
+        url: URL.createObjectURL(file)
+    };
+};
+const ImageUpload = ({ multiple = false, thumbSize, addButtonText = "Adicionar", maxSizeInMB, maxFiles, onFileChange, onFilesUpdate, reverse, }) => {
     const inputRef = react_1.default.useRef(null);
     const [pictures, setPictures] = (0, react_1.useState)([]);
+    const [files, setFiles] = (0, react_1.useState)([]);
     const [isOpen, setIsOpen] = (0, react_1.useState)(false);
     const [photoIndex, setPhotoIndex] = (0, react_1.useState)(0);
     const sortPictures = reverse ? [...pictures].reverse() : pictures;
@@ -43,6 +53,10 @@ const ImageUpload = ({ multiple = false, thumbSize, addButtonText = "Adicionar",
         if (onFileChange)
             onFileChange(pictures);
     }, [pictures]);
+    (0, react_1.useEffect)(() => {
+        if (onFilesUpdate)
+            onFilesUpdate(files);
+    }, [files]);
     const onClickFile = () => {
         if (inputRef.current) {
             inputRef.current.click();
@@ -56,8 +70,7 @@ const ImageUpload = ({ multiple = false, thumbSize, addButtonText = "Adicionar",
             return;
         }
         if (maxSizeInMB) {
-            for (let i = 0; i < event.target.files.length; i++) {
-                const file = event.target.files[i];
+            for (const file of Array.from(event.target.files)) {
                 if (file.size / 1024 / 1024 > maxSizeInMB) {
                     alert(`Arquivos devem ter no máximo ${maxSizeInMB} MB.`);
                     return;
@@ -68,15 +81,22 @@ const ImageUpload = ({ multiple = false, thumbSize, addButtonText = "Adicionar",
         const urls = filesArray.map((file) => {
             return URL.createObjectURL(file);
         });
+        const fileInfoArray = filesArray.map((file) => {
+            return getFileInformation(file); // Obter informações do arquivo e armazená-las
+        });
         setPictures([...pictures, ...urls]);
+        setFiles([...files, ...fileInfoArray]);
         // limpar os arquivos do input
         if (event.target)
             event.target.value = "";
     };
     const removeImage = (index) => {
         const newPictures = [...pictures];
+        const newFiles = [...files];
         newPictures.splice(index, 1);
+        newFiles.splice(index, 1);
         setPictures(newPictures);
+        setFiles(newFiles);
     };
     return (react_1.default.createElement(ImageUpload_styled_1.ImageUploaderContainer, { minHeight: thumbSize },
         react_1.default.createElement(ImageUpload_styled_1.ImageUploaderButton, { onClick: onClickFile },

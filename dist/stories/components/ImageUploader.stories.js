@@ -16,7 +16,7 @@ const meta = {
 };
 exports.default = meta;
 exports.Primary = {
-    render: () => (react_1.default.createElement(components_1.ImageUpload, { reverse: true, multiple: true, thumbSize: 100, onFileChange: (files) => console.log("Files" + JSON.stringify(files, null, 2)) })),
+    render: () => (react_1.default.createElement(components_1.ImageUpload, { reverse: true, multiple: true, thumbSize: 100, onFilesUpdate: (files) => console.log("Files" + JSON.stringify(files)), onFileChange: (files) => console.log("files blob" + JSON.stringify(files, null, 2)) })),
     name: "Image Upload Multple",
 };
 //# sourceMappingURL=ImageUploader.stories.js.map
