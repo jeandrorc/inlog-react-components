@@ -2,18 +2,16 @@
 
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import Header, { HeaderProps } from "../../components/Header";
 import { DrawerMenuProps } from "../../components/DrawerMenu/DrawerMenu";
 import { ImportContacts, OpenInBrowser, OpenInNew } from "@mui/icons-material";
 import Close from "@mui/icons-material/Close";
 import {
   Avatar,
   Box,
-  Container,
-  IconButton,
   MenuItem,
   Typography,
 } from "@mui/material";
+import Header, { HeaderProps } from "../../components/Header/Header";
 
 const meta: Meta<HeaderProps> = {
   component: Header,

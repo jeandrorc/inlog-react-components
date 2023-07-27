@@ -1,13 +1,18 @@
 {
-  "name": "react-components",
-  "version": "1.0.0",
+  "name": "@inlog/react-components",
+  "version": "1.0.19",
   "description": "Biblioteca de componentes React em Typescript desenvolvida para melhorar a produtividade e a consistência entre os projetos da Inlog.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "authorize": "az devops login --organization https://dev.azure.com/grupo-inlog/"
   },
   "keywords": [
     "react",
@@ -34,7 +39,9 @@
     "@types/react-dom": "^18.2.4",
     "prop-types": "^15.8.1",
     "storybook": "^7.1.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -42,13 +49,15 @@
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.0",
     "@mui/x-data-grid": "^6.9.2",
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0",
-    "react-feather": "^2.0.10"
+    "react-feather": "^2.0.10",
+    "react-image-lightbox": "^5.1.4",
+    "react-images-upload": "^1.2.8",
+    "string-width": "^6.1.0"
   },
   "peerDependencies": {
     "@mui/material": ">=5.0.0",
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-image-lightbox": "^5.1.4"
   }
 }

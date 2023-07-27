@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HeaderProps } from "../../components/Header";
+import { HeaderProps } from "../../components/Header/Header";
 declare const meta: Meta<HeaderProps>;
 export default meta;
 type Story = StoryObj<HeaderProps>;

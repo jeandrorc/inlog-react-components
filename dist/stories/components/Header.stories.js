@@ -15,10 +15,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WithSearch = exports.Primary = void 0;
 const react_1 = __importDefault(require("react"));
-const Header_1 = __importDefault(require("../../components/Header"));
 const icons_material_1 = require("@mui/icons-material");
 const Close_1 = __importDefault(require("@mui/icons-material/Close"));
 const material_1 = require("@mui/material");
+const Header_1 = __importDefault(require("../../components/Header/Header"));
 const meta = {
     component: Header_1.default,
     argTypes: {

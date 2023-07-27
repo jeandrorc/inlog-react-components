@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const material_1 = require("@mui/material");
 const react_1 = __importStar(require("react"));
 const MenuAction_styled_1 = require("./MenuAction.styled");
-const Dialog_1 = __importDefault(require("../../Dialog/Dialog"));
+const CustomDialog_1 = __importDefault(require("../../CustomDialog/CustomDialog"));
 const MenuAction = ({ menuOptions, type, ModalComponent, icon, subtitle, title, }) => {
     const [anchorEl, setAnchorEl] = (0, react_1.useState)(null);
     const [modalOpen, setModalOpen] = (0, react_1.useState)(false);
@@ -70,7 +70,7 @@ const MenuAction = ({ menuOptions, type, ModalComponent, icon, subtitle, title, 
         type === "menu" && (react_1.default.createElement(material_1.Menu, { anchorEl: anchorEl, keepMounted: true, open: Boolean(anchorEl), onClose: handleMenuClose }, menuOptions === null || menuOptions === void 0 ? void 0 : menuOptions.map(({ label, menuItemProps, icon }) => (react_1.default.createElement(material_1.MenuItem, Object.assign({}, menuItemProps),
             icon && icon,
             label))))),
-        type === "modal" && ModalComponent && (react_1.default.createElement(Dialog_1.default, { title: title, content: ModalComponent, open: modalOpen, onClose: handleModalClose }))));
+        type === "modal" && ModalComponent && (react_1.default.createElement(CustomDialog_1.default, { title: title, content: ModalComponent, open: modalOpen, onClose: handleModalClose }))));
 };
 exports.default = MenuAction;
 //# sourceMappingURL=MenuAction.js.map

@@ -1,3 +1,3 @@
-import Header, { HeaderProps } from "./Header";
-export type { HeaderProps };
-export default Header;
+export { default as Header } from './Header'
+export { default as MenuAction } from './MenuAction'
+export { default as MenuButton } from './MenuButton'
