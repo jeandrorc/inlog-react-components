@@ -20,10 +20,12 @@ type Story = StoryObj<ImageUploadProps>;
 export const Primary: Story = {
   render: () => (
     <ImageUpload
+      reverse
       multiple
       thumbSize={100}
+      onFilesUpdate={(files) => console.log("Files" + JSON.stringify(files))}
       onFileChange={(files) =>
-        console.log("Files" + JSON.stringify(files, null, 2))
+        console.log("files blob" + JSON.stringify(files, null, 2))
       }
     />
   ),
