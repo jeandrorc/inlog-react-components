@@ -1,66 +1,86 @@
 Arguments: 
-  /Users/jeandrocouto/.nvm/versions/node/v18.12.1/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js add react-draggable
 
 PATH: 
-  /Users/jeandrocouto/.nvm/versions/node/v18.12.1/bin:/usr/local/opt/mongodb-community@4.4/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/Library/Python/3.7/bin:/Users/jeandrocouto/.composer/vendor/bin
+  /usr/local/opt/mongodb-community@4.4/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/Library/Python/3.7/bin:/Users/jeandrocouto/.composer/vendor/bin
 
 Yarn version: 
   1.22.19
 
 Node version: 
-  18.12.1
+  18.16.0
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@mui%2fmaterial: ETIMEDOUT
+  Error: https://pkgs.dev.azure.com/grupo-inlog/a3f6bb22-14ee-4af8-a96d-05e885794690/_packaging/Inlog_Packages/npm/registry/@emotion%2freact: ETIMEDOUT
       at Timeout._onTimeout (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:141550:19)
-      at listOnTimeout (node:internal/timers:564:17)
-      at process.processTimers (node:internal/timers:507:7)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
 
 npm manifest: 
   {
-    "name": "react-components",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "name": "@inlog/react-components",
+    "version": "1.0.19",
+    "description": "Biblioteca de componentes React em Typescript desenvolvida para melhorar a produtividade e a consistência entre os projetos da Inlog.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+      "dist"
+    ],
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "build": "tsc",
       "storybook": "storybook dev -p 6006",
-      "build-storybook": "storybook build"
+      "build-storybook": "storybook build",
+      "authorize": "az devops login --organization https://dev.azure.com/grupo-inlog/"
     },
-    "keywords": [],
+    "keywords": [
+      "react",
+      "typescript",
+      "component-library",
+      "reusable-components",
+      "ui-library",
+      "inlog"
+    ],
     "author": "Jeandro Couto <jeandro.couto@gmail.com>",
     "license": "MIT",
     "devDependencies": {
       "@babel/preset-env": "^7.21.5",
       "@babel/preset-react": "^7.18.6",
       "@babel/preset-typescript": "^7.21.5",
-      "@storybook/addon-essentials": "^7.0.17",
-      "@storybook/addon-interactions": "^7.0.17",
-      "@storybook/addon-links": "^7.0.17",
-      "@storybook/blocks": "^7.0.17",
-      "@storybook/react": "^7.0.17",
-      "@storybook/react-webpack5": "^7.0.17",
-      "@storybook/testing-library": "^0.0.14-next.2",
+      "@storybook/addon-essentials": "^7.1.0",
+      "@storybook/addon-interactions": "^7.1.0",
+      "@storybook/addon-links": "^7.1.0",
+      "@storybook/blocks": "^7.1.0",
+      "@storybook/react": "^7.1.0",
+      "@storybook/react-webpack5": "^7.1.0",
+      "@storybook/testing-library": "^0.2.0",
       "@types/react": "^18.2.7",
       "@types/react-dom": "^18.2.4",
       "prop-types": "^15.8.1",
-      "storybook": "^7.0.6",
-      "typescript": "^5.0.4"
+      "storybook": "^7.1.0",
+      "typescript": "^5.0.4",
+      "react": "^17.0.0",
+      "react-dom": "^17.0.0"
     },
     "dependencies": {
-      "@mui/material": ">=5.0.0",
+      "@emotion/react": "^11.11.1",
+      "@emotion/styled": "^11.11.0",
+      "@mui/icons-material": "^5.14.1",
+      "@mui/material": "^5.14.0",
       "@mui/x-data-grid": "^6.9.2",
-      "react": ">=17.0.0",
-      "react-dom": ">=17.0.0"
+      "react-feather": "^2.0.10",
+      "react-image-lightbox": "^5.1.4",
+      "react-images-upload": "^1.2.8",
+      "string-width": "^6.1.0"
     },
     "peerDependencies": {
       "@mui/material": ">=5.0.0",
-      "react": ">=17.0.0",
-      "react-dom": ">=17.0.0"
+      "react": "^17.0.0",
+      "react-dom": "^17.0.0",
+      "react-image-lightbox": "^5.1.4"
     }
   }
 
