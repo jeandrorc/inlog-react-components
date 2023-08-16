@@ -4,6 +4,7 @@ import React, {
   useState,
   Ref,
   ReactNode,
+  useEffect,
 } from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -43,6 +44,7 @@ export type ModalProps = {
   children?: ReactNode;
   minHeight?: number | string;
   minWidth?: number | string;
+  onCLose?: () => void;
 };
 
 export type ModalHandle = {
@@ -65,6 +67,7 @@ const Modal = forwardRef((props: ModalProps, ref: Ref<any>) => {
     actions = [],
     loading = false,
     draggable = false,
+    onCLose
   } = props;
   const [open, setOpen] = useState(false);
   const [fullScreen, setFullScreen] = useState(false);
@@ -75,6 +78,10 @@ const Modal = forwardRef((props: ModalProps, ref: Ref<any>) => {
 
   const handleClose = () => {
     setOpen(false);
+    setFullScreen(false);
+    if (onCLose) {
+      onCLose();
+    }
   };
 
   useImperativeHandle(ref, () => ({

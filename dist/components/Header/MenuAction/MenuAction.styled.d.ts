@@ -33,4 +33,6 @@ export declare const MenuItemRoot: import("@emotion/styled").StyledComponent<{
     ref?: ((instance: HTMLButtonElement | null) => void) | import("react").RefObject<HTMLButtonElement> | null | undefined;
 }, "variant" | "color" | "action" | "children" | "tabIndex" | "disabled" | "size" | "href" | "sx" | keyof import("@mui/material/OverridableComponent").CommonProps | "centerRipple" | "disableRipple" | "disableTouchRipple" | "focusRipple" | "focusVisibleClassName" | "LinkComponent" | "onFocusVisible" | "TouchRippleProps" | "touchRippleRef" | "disableFocusRipple" | "disableElevation" | "fullWidth" | "endIcon" | "startIcon"> & {
     theme?: import("@emotion/react").Theme | undefined;
+} & {
+    component?: import("react").ElementType<any> | undefined;
 }, {}, {}>;

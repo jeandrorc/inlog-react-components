@@ -6,8 +6,8 @@ export const StyledDialog = styled(Dialog)<{
   minWidth?: string | number;
 }>`
   .MuiDialog-paper {
-    min-width: ${(props) => props.minHeight || "50vw"};
-    min-height: ${(props) => props.minWidth || "50vw"};
+    min-width: ${(props) => props.minWidth || "70vw"};
+    min-height: ${(props) => props.minHeight || "70vh"};
   }
 `;
 export const Title = styled.h4``;

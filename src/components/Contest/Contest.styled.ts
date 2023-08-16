@@ -36,5 +36,5 @@ export const ContestDiv = styled.div`
 `;
 
 export const CountDiv = styled.div<CountProps>`
-    background-color: ${props => props.success ? props.theme.colors.success : props.theme.colors.danger};
+    background-color: ${props => props.success ? colors.success : colors.danger};
 `;
