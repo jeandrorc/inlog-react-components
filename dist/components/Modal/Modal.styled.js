@@ -11,6 +11,10 @@ exports.StyledDialog = (0, styled_1.default)(material_1.Dialog) `
     min-width: ${(props) => props.minWidth || "70vw"};
     min-height: ${(props) => props.minHeight || "70vh"};
   }
+  .MuiDialogContent-root {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 exports.Title = styled_1.default.h4 ``;
 exports.Subtitle = styled_1.default.h6 ``;

@@ -49,6 +49,14 @@ Primary.args = {
   children: "This is the content of the Modal.",
   actions: [
     {
+      label: (<Button variant="outlined">Cancelar</Button>),
+      color: "info",
+      id: 1,
+      onClick: () => {
+        alert("You clicked the close modal button!");
+      },
+    },
+    {
       label: "Submit",
       color: "info",
       id: 1,

@@ -1,6 +1,6 @@
 {
   "name": "@inlog/react-components",
-  "version": "1.0.23",
+  "version": "1.0.25",
   "description": "Biblioteca de componentes React em Typescript desenvolvida para melhorar a produtividade e a consistência entre os projetos da Inlog.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

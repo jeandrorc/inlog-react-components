@@ -4,9 +4,7 @@ import React, {
   useState,
   Ref,
   ReactNode,
-  useEffect,
 } from "react";
-import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
@@ -17,11 +15,17 @@ import CloseIcon from "@mui/icons-material/Close";
 import CircularProgress from "@mui/material/CircularProgress";
 import Draggable from "react-draggable";
 import { Button, Paper, PaperProps } from "@mui/material";
-import { DialogHeader, Row, StyledDialog, Subtitle } from "./Modal.styled";
+import {
+  DialogHeader,
+  LoadingRoot,
+  Row,
+  StyledDialog,
+  Subtitle,
+} from "./Modal.styled";
 
 export type ModalAction = {
   id: number;
-  label: string;
+  label: string | React.ReactNode ;
   color:
     | "inherit"
     | "primary"
@@ -45,6 +49,8 @@ export type ModalProps = {
   minHeight?: number | string;
   minWidth?: number | string;
   onCLose?: () => void;
+  hideTopButtons?: boolean;
+  noPadding?: boolean;
 };
 
 export type ModalHandle = {
@@ -67,7 +73,9 @@ const Modal = forwardRef((props: ModalProps, ref: Ref<any>) => {
     actions = [],
     loading = false,
     draggable = false,
-    onCLose
+    onCLose,
+    hideTopButtons,
+    noPadding,
   } = props;
   const [open, setOpen] = useState(false);
   const [fullScreen, setFullScreen] = useState(false);
@@ -98,37 +106,61 @@ const Modal = forwardRef((props: ModalProps, ref: Ref<any>) => {
       PaperComponent={draggable ? DraggableDialog : undefined}
       minHeight={props.minHeight}
       minWidth={props.minWidth}
+      noPadding={noPadding}
     >
       <DialogHeader>
-        <DialogTitle>
-          {title}
-        </DialogTitle>
+        <DialogTitle>{title}</DialogTitle>
         <Row>
           <Subtitle>{subtitle}</Subtitle>
-          <IconButton onClick={handleToggleFullscreen}>
-            {fullScreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
-          </IconButton>
-          <IconButton onClick={handleClose}>
-            <CloseIcon />
-          </IconButton>
+          {!hideTopButtons && (
+            <>
+              <IconButton onClick={handleToggleFullscreen}>
+                {fullScreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
+              </IconButton>
+              <IconButton onClick={handleClose}>
+                <CloseIcon />
+              </IconButton>
+            </>
+          )}
         </Row>
       </DialogHeader>
 
-      <DialogContent>
-        {loading ? <CircularProgress /> : props.children}
+      <DialogContent className="RootContent">
+        {loading && (
+          <LoadingRoot>
+            <CircularProgress />
+          </LoadingRoot>
+        )}
+        {open && props.children}
       </DialogContent>
       <DialogActions>
-        {actions.map((action, index) => (
-          <Button
-            className={action.className}
-            style={action.customStyle}
-            key={`moda-action-button-${action.id}`}
-            onClick={action.onClick}
-            color={action.color}
-          >
-            {action.label}
-          </Button>
-        ))}
+        {actions.map((action) => {
+          if (typeof action.label === 'string') {
+            return (
+              <Button
+                className={action.className}
+                style={action.customStyle}
+                key={`moda-action-button-${action.id}`}
+                onClick={action.onClick}
+                color={action.color}
+              >
+                {action.label}
+              </Button>
+            );
+          }
+          return (
+            <Button
+              sx={{ backgroundColor: 'transparent', border: 'none' }}
+              className={action.className}
+              style={action.customStyle}
+              key={`moda-action-button-${action.id}`}
+              onClick={action.onClick}
+              color={action.color}
+            >
+              {action.label}
+            </Button>
+          );
+        })}
       </DialogActions>
     </StyledDialog>
   );
