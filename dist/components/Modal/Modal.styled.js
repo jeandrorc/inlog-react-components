@@ -39,6 +39,7 @@ exports.LoadingRoot = styled_1.default.div `
   top: 0;
   left: 0;
   display: flex;
+  z-index: 9;
   width: 100%;
   height: 100%;
   justify-content: center;

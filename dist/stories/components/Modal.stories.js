@@ -51,7 +51,9 @@ const Template = (args) => {
             react_1.default.createElement(material_1.Container, null,
                 react_1.default.createElement(material_1.Grid, { container: true },
                     react_1.default.createElement(material_1.Grid, { item: true, xs: 12 },
-                        react_1.default.createElement("h1", null, "Conteudo do modal")))))));
+                        react_1.default.createElement("h1", null, "Conteudo do modal"),
+                        react_1.default.createElement(material_1.FormControl, null,
+                            react_1.default.createElement(material_1.TextField, { name: "Nome", placeholder: "Nome" }))))))));
 };
 exports.Primary = Template.bind({});
 exports.Primary.args = {

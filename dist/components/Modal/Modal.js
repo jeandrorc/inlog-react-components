@@ -89,7 +89,7 @@ const Modal = (0, react_1.forwardRef)((props, ref) => {
             if (typeof action.label === 'string') {
                 return (react_1.default.createElement(material_1.Button, { className: action.className, style: action.customStyle, key: `moda-action-button-${action.id}`, onClick: action.onClick, color: action.color }, action.label));
             }
-            return (react_1.default.createElement(material_1.Button, { sx: { backgroundColor: 'transparent', border: 'none' }, className: action.className, style: action.customStyle, key: `moda-action-button-${action.id}`, onClick: action.onClick, color: action.color }, action.label));
+            return (react_1.default.createElement("div", { className: action.className, style: action.customStyle, key: `moda-action-button-${action.id}`, onClick: action.onClick, color: action.color }, action.label));
         }))));
 });
 exports.default = Modal;
