@@ -61,6 +61,14 @@ exports.Primary.args = {
     children: "This is the content of the Modal.",
     actions: [
         {
+            label: (react_1.default.createElement(material_1.Button, { variant: "outlined" }, "Cancelar")),
+            color: "info",
+            id: 1,
+            onClick: () => {
+                alert("You clicked the close modal button!");
+            },
+        },
+        {
             label: "Submit",
             color: "info",
             id: 1,

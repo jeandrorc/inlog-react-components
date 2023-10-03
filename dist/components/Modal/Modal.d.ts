@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 export type ModalAction = {
     id: number;
-    label: string;
+    label: string | React.ReactNode;
     color: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
     className?: string;
     customStyle?: React.CSSProperties;
@@ -17,6 +17,8 @@ export type ModalProps = {
     minHeight?: number | string;
     minWidth?: number | string;
     onCLose?: () => void;
+    hideTopButtons?: boolean;
+    noPadding?: boolean;
 };
 export type ModalHandle = {
     openModal: () => void;

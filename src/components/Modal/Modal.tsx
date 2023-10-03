@@ -149,8 +149,7 @@ const Modal = forwardRef((props: ModalProps, ref: Ref<any>) => {
             );
           }
           return (
-            <Button
-              sx={{ backgroundColor: 'transparent', border: 'none' }}
+            <div
               className={action.className}
               style={action.customStyle}
               key={`moda-action-button-${action.id}`}
@@ -158,7 +157,7 @@ const Modal = forwardRef((props: ModalProps, ref: Ref<any>) => {
               color={action.color}
             >
               {action.label}
-            </Button>
+            </div>
           );
         })}
       </DialogActions>

@@ -55,7 +55,7 @@ const DraggableDialog = (_a) => {
         react_1.default.createElement(material_1.Paper, Object.assign({}, props), children)));
 };
 const Modal = (0, react_1.forwardRef)((props, ref) => {
-    const { title, subtitle, actions = [], loading = false, draggable = false, onCLose } = props;
+    const { title, subtitle, actions = [], loading = false, draggable = false, onCLose, hideTopButtons, noPadding, } = props;
     const [open, setOpen] = (0, react_1.useState)(false);
     const [fullScreen, setFullScreen] = (0, react_1.useState)(false);
     const handleToggleFullscreen = () => {
@@ -72,16 +72,25 @@ const Modal = (0, react_1.forwardRef)((props, ref) => {
         openModal: () => setOpen(true),
         closeModal: () => setOpen(false),
     }));
-    return (react_1.default.createElement(Modal_styled_1.StyledDialog, { maxWidth: "lg", open: open, onClose: handleClose, fullScreen: fullScreen, PaperComponent: draggable ? DraggableDialog : undefined, minHeight: props.minHeight, minWidth: props.minWidth },
+    return (react_1.default.createElement(Modal_styled_1.StyledDialog, { maxWidth: "lg", open: open, onClose: handleClose, fullScreen: fullScreen, PaperComponent: draggable ? DraggableDialog : undefined, minHeight: props.minHeight, minWidth: props.minWidth, noPadding: noPadding },
         react_1.default.createElement(Modal_styled_1.DialogHeader, null,
             react_1.default.createElement(DialogTitle_1.default, null, title),
             react_1.default.createElement(Modal_styled_1.Row, null,
                 react_1.default.createElement(Modal_styled_1.Subtitle, null, subtitle),
-                react_1.default.createElement(IconButton_1.default, { onClick: handleToggleFullscreen }, fullScreen ? react_1.default.createElement(FullscreenExit_1.default, null) : react_1.default.createElement(Fullscreen_1.default, null)),
-                react_1.default.createElement(IconButton_1.default, { onClick: handleClose },
-                    react_1.default.createElement(Close_1.default, null)))),
-        react_1.default.createElement(DialogContent_1.default, null, loading ? react_1.default.createElement(CircularProgress_1.default, null) : props.children),
-        react_1.default.createElement(DialogActions_1.default, null, actions.map((action, index) => (react_1.default.createElement(material_1.Button, { className: action.className, style: action.customStyle, key: `moda-action-button-${action.id}`, onClick: action.onClick, color: action.color }, action.label))))));
+                !hideTopButtons && (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(IconButton_1.default, { onClick: handleToggleFullscreen }, fullScreen ? react_1.default.createElement(FullscreenExit_1.default, null) : react_1.default.createElement(Fullscreen_1.default, null)),
+                    react_1.default.createElement(IconButton_1.default, { onClick: handleClose },
+                        react_1.default.createElement(Close_1.default, null)))))),
+        react_1.default.createElement(DialogContent_1.default, { className: "RootContent" },
+            loading && (react_1.default.createElement(Modal_styled_1.LoadingRoot, null,
+                react_1.default.createElement(CircularProgress_1.default, null))),
+            open && props.children),
+        react_1.default.createElement(DialogActions_1.default, null, actions.map((action) => {
+            if (typeof action.label === 'string') {
+                return (react_1.default.createElement(material_1.Button, { className: action.className, style: action.customStyle, key: `moda-action-button-${action.id}`, onClick: action.onClick, color: action.color }, action.label));
+            }
+            return (react_1.default.createElement(material_1.Button, { sx: { backgroundColor: 'transparent', border: 'none' }, className: action.className, style: action.customStyle, key: `moda-action-button-${action.id}`, onClick: action.onClick, color: action.color }, action.label));
+        }))));
 });
 exports.default = Modal;
 //# sourceMappingURL=Modal.js.map
