@@ -3,7 +3,8 @@
 import React, { useRef } from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Modal, { ModalHandle, ModalProps } from "../../components/Modal/Modal";
-import { Button, Container, Grid } from "@mui/material";
+import { Button, Container, FormControl, Grid, TextField } from "@mui/material";
+import TextInput from "../../components/Form/TextInput/TextInput";
 
 const meta: Meta<ModalProps> = {
   component: Modal,
@@ -33,6 +34,9 @@ const Template: StoryFn<ModalProps> = (args) => {
           <Grid container>
             <Grid item xs={12}>
               <h1>Conteudo do modal</h1>
+              <FormControl>
+                <TextField name="Nome" placeholder="Nome"/> 
+              </FormControl>
             </Grid>
           </Grid>
         </Container>
