@@ -1,10 +1,6 @@
 import React, { ReactNode, MouseEvent, useState } from "react";
 import {
-  Toolbar,
-  IconButton,
-  Menu,
-  MenuItem,
-  Avatar,
+  Toolbar
 } from "@mui/material";
 import Logo, { LogoProps } from "../Logo/Logo";
 import {

@@ -4,7 +4,6 @@ import React, { useRef } from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Modal, { ModalHandle, ModalProps } from "../../components/Modal/Modal";
 import { Button, Container, FormControl, Grid, TextField } from "@mui/material";
-import TextInput from "../../components/Form/TextInput/TextInput";
 
 const meta: Meta<ModalProps> = {
   component: Modal,
