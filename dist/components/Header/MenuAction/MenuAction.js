@@ -47,28 +47,13 @@ const MenuAction = ({ menuOptions, type, ModalComponent, icon, subtitle, title, 
     const handleModalClose = () => {
         setModalOpen(false);
     };
-    const renderButtonMenu = () => {
-        if (icon && !title && !subtitle) {
-            return (react_1.default.createElement(material_1.IconButton, { edge: "end", onClick: handleClick }, icon));
-        }
-        if (title && subtitle && !icon) {
-            return (react_1.default.createElement(MenuAction_styled_1.MenuItemRoot, { onClick: handleClick, className: "MenuItem-root button-withRows" },
-                react_1.default.createElement("div", { className: "MenuItem-body" },
-                    react_1.default.createElement(material_1.Typography, { className: "Menu-item-button-title", variant: "h4" }, title),
-                    react_1.default.createElement(material_1.Typography, { className: "Menu-item-button-subTitle", variant: "h6" }, subtitle))));
-        }
-        return (react_1.default.createElement(MenuAction_styled_1.MenuItemRoot, { onClick: handleClick, className: "MenuItem-root button-withRows", endIcon: icon && icon },
-            react_1.default.createElement("div", { className: "MenuItem-body" },
-                react_1.default.createElement(material_1.Typography, { className: "Menu-item-button-title", variant: "h4" }, title),
-                react_1.default.createElement(material_1.Typography, { className: "Menu-item-button-subTitle", variant: "h6" }, subtitle))));
-    };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         !title && !subtitle && icon ? (react_1.default.createElement(MenuAction_styled_1.MenuItemRoot, { type: "button", onClick: handleClick }, icon)) : (react_1.default.createElement(MenuAction_styled_1.MenuItemRoot, { onClick: handleClick, className: "MenuItem-root button-withRows", endIcon: icon && icon },
             react_1.default.createElement("div", { className: "MenuItem-body" },
                 react_1.default.createElement(material_1.Typography, { className: "Menu-item-button-title", variant: "h4", textTransform: "none" }, title),
                 react_1.default.createElement(material_1.Typography, { className: "Menu-item-button-subTitle", variant: "h6", textTransform: "none" }, subtitle)))),
         type === "menu" && (react_1.default.createElement(material_1.Menu, { anchorEl: anchorEl, keepMounted: true, open: Boolean(anchorEl), onClose: handleMenuClose }, menuOptions === null || menuOptions === void 0 ? void 0 : menuOptions.map(({ label, menuItemProps, icon }) => (react_1.default.createElement(material_1.MenuItem, Object.assign({}, menuItemProps),
-            icon && icon,
+            !!icon && icon,
             label))))),
         type === "modal" && ModalComponent && (react_1.default.createElement(CustomDialog_1.default, { title: title, content: ModalComponent, open: modalOpen, onClose: handleModalClose }))));
 };

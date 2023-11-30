@@ -1,9 +1,7 @@
 import {
-  IconButton,
   Menu,
   MenuItem,
   MenuItemProps,
-  Modal,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -52,49 +50,6 @@ const MenuAction: React.FC<MenuActionProps> = ({
     setModalOpen(false);
   };
 
-  const renderButtonMenu = () => {
-    if (icon && !title && !subtitle) {
-      return (
-        <IconButton edge="end" onClick={handleClick}>
-          {icon}
-        </IconButton>
-      );
-    }
-    if (title && subtitle && !icon) {
-      return (
-        <MenuItemRoot
-          onClick={handleClick}
-          className="MenuItem-root button-withRows"
-        >
-          <div className="MenuItem-body">
-            <Typography className="Menu-item-button-title" variant="h4">
-              {title}
-            </Typography>
-            <Typography className="Menu-item-button-subTitle" variant="h6">
-              {subtitle}
-            </Typography>
-          </div>
-        </MenuItemRoot>
-      );
-    }
-    return (
-      <MenuItemRoot
-        onClick={handleClick}
-        className="MenuItem-root button-withRows"
-        endIcon={icon && icon}
-      >
-        <div className="MenuItem-body">
-          <Typography className="Menu-item-button-title" variant="h4">
-            {title}
-          </Typography>
-          <Typography className="Menu-item-button-subTitle" variant="h6">
-            {subtitle}
-          </Typography>
-        </div>
-      </MenuItemRoot>
-    );
-  };
-
   return (
     <>
       {!title && !subtitle && icon ? (
@@ -135,7 +90,7 @@ const MenuAction: React.FC<MenuActionProps> = ({
         >
           {menuOptions?.map(({ label, menuItemProps, icon }) => (
             <MenuItem {...menuItemProps}>
-              {icon && icon}
+              {!!icon && icon}
               {label}
             </MenuItem>
           ))}
