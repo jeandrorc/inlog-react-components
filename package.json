@@ -1,6 +1,10 @@
 {
   "name": "@inlog/react-components",
+<<<<<<< Updated upstream
   "version": "1.0.27",
+=======
+  "version": "1.0.29",
+>>>>>>> Stashed changes
   "description": "Biblioteca de componentes React em Typescript desenvolvida para melhorar a produtividade e a consistência entre os projetos da Inlog.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
