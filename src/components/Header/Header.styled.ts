@@ -25,13 +25,19 @@ export const RightMenuButtonWrapper = styled(Box)`
 
 export const LeftArea = styled.div`
   display: flex;
+  gap: 1em;
 `;
 export const RightArea = styled.div`
   display: flex;
 `;
 export const CenterArea = styled.div`
+  display: flex;
   flex-grow: 1;
   padding: 0 10px;
+  flex-direction: row;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const PageTitle = styled(Typography)<TypographyProps>`
