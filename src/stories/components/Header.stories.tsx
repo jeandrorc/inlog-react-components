@@ -1,6 +1,6 @@
 // src/stories/CustomDataGrid.stories.tsx
 
-import React from "react";
+import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { DrawerMenuProps } from "../../components/DrawerMenu/DrawerMenu";
 import { ImportContacts, OpenInBrowser, OpenInNew } from "@mui/icons-material";
@@ -121,6 +121,113 @@ export const WithSearch: Story = {
   ),
   name: "Header with search",
 };
+
+
+const branches = [
+  {
+    label: "Sustentare Feira de Santana",
+    value: 1
+  },
+  {
+    label: "Sustentare Salvador",
+    value: 2
+  },
+  {
+    label: "Sustentare Lauro de Freitas",
+    value: 3
+  }
+]
+
+const BranchSelectorComponent: React.FC = () => {
+  const [branch, setBranch] = useState(branches[0].value)
+
+  const onChange = (value: string) => {
+    setBranch(Number(value))
+  }
+
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2}}>
+      <Typography>Branch:</Typography>
+      <select value={branch} onChange={(event) => onChange(event.target.value)}>
+        {branches.map((branch) => (
+          <option key={branch.value} value={branch.value}>{branch.label}</option>
+        ))}
+      </select>
+    </Box>
+  )
+}
+
+
+const applications = [
+  {
+    label: "Aplicação 1",
+    value: 1
+  },
+  {
+    label: "Aplicação 2",
+    value: 2
+  },
+  {
+    label: "Aplicação 3",
+    value: 3
+  }
+]
+
+const ChangeTitleComponent: React.FC = () => {
+  const [title, setTitle] = useState(applications[0].value)
+
+
+  const onChange = (value: string) => {
+    setTitle(Number(value));
+  }
+
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2}}>
+       <select value={title} onChange={(event) => onChange(event.target.value)}>
+        {applications.map((app) => (
+          <option key={app.value} value={app.value}>{app.label}</option>
+        ))}
+      </select>
+    </Box>
+  )
+}
+
+
+export const WithCenterComponent: Story = {
+
+
+  render: () => (
+    <Header
+      logoPros={{ link: "/", variant: "header" }}
+      inputSearchProps={{
+        onBlur: async (value) => {
+          await handleSearch(value);
+        },
+      }}
+      drawerMenuProps={drawerMenuProps}
+      pageTitle={<ChangeTitleComponent/>}
+      hideMenuButton
+      CenterComponent={<BranchSelectorComponent/>}
+      menuOptions={[
+        {
+          type: "menu",
+          icon: <Avatar alt="Jhon Doe" />,
+          title: "Abrir menu",
+          menuOptions: [
+            {
+              label: "Item 1",
+              icon: <Avatar alt="Jhon Doe" />,
+              menuItemProps: {
+                onClick: () => alert("abrir opcao"),
+              },
+            },
+          ],
+        }
+      ]}
+    />
+  ),
+  name: "Header with center component",
+}
 
 async function handleSearch(value: string) {
   const response = await simulateApiCall(value, 3000);
