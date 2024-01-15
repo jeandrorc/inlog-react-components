@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+
 import {
   ImageListSlider,
   ImageUploaderButton,
@@ -143,7 +142,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             </Thumbnail>
           ))}
         </ImageListSlider>
-        {isOpen && (
+        {/* {isOpen && (
           <Lightbox
             imageLoadErrorMessage="Não foi possível carregar a imagem."
             mainSrc={sortPictures[photoIndex]}
@@ -163,7 +162,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               setPhotoIndex((photoIndex + 1) % sortPictures.length)
             }
           />
-        )}
+        )} */}
       </ImageUploaderPreviewContainer>
     </ImageUploaderContainer>
   );

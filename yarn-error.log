@@ -1,28 +1,35 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js add react-draggable
+  /Users/jeandrocouto/.nvm/versions/node/v16.18.1/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js
 
 PATH: 
-  /usr/local/opt/mongodb-community@4.4/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/Library/Python/3.7/bin:/Users/jeandrocouto/.composer/vendor/bin
+  /Users/jeandrocouto/.nvm/versions/node/v16.18.1/bin:/Users/jeandrocouto/.bun/bin:/usr/local/opt/mongodb-community@4.4/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/.composer/vendor/bin:/Users/jeandrocouto/Library/Python/3.7/bin:/Users/jeandrocouto/.composer/vendor/bin
 
 Yarn version: 
   1.22.19
 
 Node version: 
-  18.16.0
+  16.18.1
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: https://pkgs.dev.azure.com/grupo-inlog/a3f6bb22-14ee-4af8-a96d-05e885794690/_packaging/Inlog_Packages/npm/registry/@emotion%2freact: ETIMEDOUT
-      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:141550:19)
-      at listOnTimeout (node:internal/timers:569:17)
-      at process.processTimers (node:internal/timers:512:7)
+  Error: https://registry.npmjs.org/cssTypes: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:66145:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1358:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
 npm manifest: 
   {
     "name": "@inlog/react-components",
-    "version": "1.0.19",
+    "version": "1.0.30",
     "description": "Biblioteca de componentes React em Typescript desenvolvida para melhorar a produtividade e a consistência entre os projetos da Inlog.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -60,27 +67,28 @@ npm manifest:
       "@types/react": "^18.2.7",
       "@types/react-dom": "^18.2.4",
       "prop-types": "^15.8.1",
-      "storybook": "^7.1.0",
-      "typescript": "^5.0.4",
-      "react": "^17.0.0",
-      "react-dom": "^17.0.0"
-    },
-    "dependencies": {
-      "@emotion/react": "^11.11.1",
-      "@emotion/styled": "^11.11.0",
-      "@mui/icons-material": "^5.14.1",
-      "@mui/material": "^5.14.0",
-      "@mui/x-data-grid": "^6.9.2",
-      "react-feather": "^2.0.10",
-      "react-image-lightbox": "^5.1.4",
-      "react-images-upload": "^1.2.8",
-      "string-width": "^6.1.0"
-    },
-    "peerDependencies": {
-      "@mui/material": ">=5.0.0",
       "react": "^17.0.0",
       "react-dom": "^17.0.0",
-      "react-image-lightbox": "^5.1.4"
+      "storybook": "^7.1.0",
+      "typescript": "^5.0.4"
+    },
+    "dependencies": {
+      "@emotion/react": "^11.11.3",
+      "@emotion/styled": "^11.11.0",
+      "@mui/icons-material": "^5.15.4",
+      "@mui/material": "^5.15.4",
+      "@mui/styled-engine-sc": "^6.0.0-alpha.12",
+      "react-draggable": "^4.4.5",
+      "react-feather": "^2.0.10",
+      "string-width": "^6.1.0",
+      "styled-components": "^6.1.8"
+    },
+    "resolutions": {
+      "cssTypes": "3.1.2"
+    },
+    "peerDependencies": {
+      "react": "^17.0.0 || ^18.0.0",
+      "react-dom": "^17.0.0 || ^18.0.0"
     }
   }
 
