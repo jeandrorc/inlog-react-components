@@ -7,7 +7,7 @@ export const ImageUploaderContainer = styled.div<{
 }>`
   display: flex;
   flex-direction: row;
-  border: 1px solid ${colors.gray100};
+  border: 1px dashed ${colors.gray900};
   background-color: ${colors.grayPastel};
   min-height: ${({ minHeight }) =>
     minHeight ? `${minHeight + 10}px` : "inherit"};
@@ -24,16 +24,26 @@ export const ImageUploaderPreviewContainer = styled.div`
   overflow-y: auto;
 `;
 
+export const ImageThumbnailActionContainer = styled.button<{ height: number, width: number}>`
+  width: ${({ width }) => `${width}px`};
+  height: ${({ height }) => `${height}px`};
+`
+
 export const ImageListSlider = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
   overflow-x: auto;
+  gap: 1em;
 `;
 export const Thumbnail = styled(CardMedia)`
   position: relative;
-  margin: auto 12px;
-  button {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .button-remove {
     position: absolute;
     bottom: 0;
     right: 0;
